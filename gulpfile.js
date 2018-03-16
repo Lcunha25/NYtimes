@@ -12,23 +12,12 @@ var rename = require("gulp-rename");
 var prettyError = require("gulp-prettyerror")
 // TASKS
 
-gulp.task('default', ['scripts', 'browser-sync', 'watch']);
-
 gulp.task('scripts', function() {
     return gulp.src('js/*.js') // What files do we want gulp to consume?
     .pipe(uglify()) // Call the uglify function on these files
     .pipe(rename({ extname: '.min.js'})) // Rename the uglified file
     .pipe(gulp.dest('./build/js')); // Where do we put the result?
 });
-
-gulp.task('watch', function() {
-    gulp.watch(['js/*.js', '*.css', '*.html'] , ['scripts', 'reload']);
- });
-
- gulp.task('reload', function() {
-    browserSync.reload();
- });
-
 gulp.task('browser-sync', function() {
     browserSync.init({
         server: {
@@ -36,7 +25,13 @@ gulp.task('browser-sync', function() {
         }
     });
 });
-  gulp.task("sass", function() {
+gulp.task('watch', function() {
+    gulp.watch(['js/*.js', 'sass/*.scss', '*.html'] , ['scripts', 'sass', 'reload']);
+});
+gulp.task('reload', function() {
+    browserSync.reload();
+});
+gulp.task("sass", function() {
     return gulp
       .src("./sass/style.scss")
       .pipe(prettyError()) // ADD THIS LINE
@@ -51,3 +46,4 @@ gulp.task('browser-sync', function() {
       .pipe(rename("style.min.css"))
       .pipe(gulp.dest("./build/css"));
   });
+  gulp.task('default', ['browser-sync', 'scripts' , 'sass', 'watch']);
