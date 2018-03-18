@@ -1,0 +1,55 @@
+body {
+    background-color: black;
+    height: 100%;
+}
+.wrapping {
+    height: 500px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    span{
+        position: relative;
+        .NYimage {
+            position: absolute;
+            background: url(/assets/images/nyt-logo.svg) no-repeat, center;
+            height: 227px;
+            width: 300px;
+            top: 200px;
+        }    
+    }
+    #section {
+        position: absolute;
+        left: 190px;
+        top: 300px;
+    }
+}
+#news {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    li{
+        position: relative;
+        width: 33%;
+        margin: 2px;
+        overflow: hidden;
+        img{
+            width: 460px;
+            height:350px;
+        }
+    }
+}
+p{
+    position: absolute;
+    width: 460px;
+    height: 350px;
+    color: blue;
+    background-color: rgba(255,255,255,0.5);
+    font-size: 24px;
+    text-align: center;
+    top: 280px;
+}
+
+.newsHD {
+    display: none;
+}

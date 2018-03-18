@@ -5,7 +5,7 @@ var browserSync = require('browser-sync').create();
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var eslint = require('gulp-eslint');
-var sass = require("gulp-sass");
+var sass = require('gulp-sass');
 var autoprefixer = require("gulp-autoprefixer");
 var cssnano = require("gulp-cssnano");
 var rename = require("gulp-rename");
@@ -31,19 +31,19 @@ gulp.task('watch', function() {
 gulp.task('reload', function() {
     browserSync.reload();
 });
-gulp.task("sass", function() {
+gulp.task('sass', function() {
     return gulp
-      .src("./sass/style.scss")
+      .src('./sass/style.scss')
       .pipe(prettyError()) // ADD THIS LINE
       .pipe(sass())
       .pipe(
         autoprefixer({
-          browsers: ["last 2 versions"]
+          browsers: ['last 2 versions']
         })
       )
-      .pipe(gulp.dest("./build/css"))
+      .pipe(gulp.dest('./build/css'))
       .pipe(cssnano())
-      .pipe(rename("style.min.css"))
-      .pipe(gulp.dest("./build/css"));
+      .pipe(rename('style.min.css'))
+      .pipe(gulp.dest('./build/css'));
   });
   gulp.task('default', ['browser-sync', 'scripts' , 'sass', 'watch']);
