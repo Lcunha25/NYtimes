@@ -1,26 +1,31 @@
 body {
+    position: absolute;
     background-color: black;
     height: 100%;
+    width: 100%;
 }
 .wrapping {
-    height: 100%;
+    position: relative;
     width: 100%;
+    height: inherit;
     .NYimage .NYlogo {
             position: absolute;
             top: 200px;
         }
     #section {
-        position: absolute;
+        position: relative;
         left: 290px;
         top: 300px;
     }
 }
 h3 {
     color: white;
-    font-size: 25px;
-    position: absolute;
+    font-size: 16px;
+    font-family: fontItalic;
+    position: relative;
     left: 290px;
     top: 265px;
+    width: 200px;
 }
 #news {
     width: 100%;
@@ -28,13 +33,18 @@ h3 {
     flex-wrap: wrap;
     li{
         position: relative;
-        width: 33%;
+        width: 25%;
+        height: 350px;
         overflow: hidden;
         img{
-            width: 460px;
-            height:350px;
+            width: 100%;
+            height:100%;
         }
     }
+}
+.newsHD {
+    display: none;
+    width: 100%;
 }
 p{
     position: absolute;
@@ -42,13 +52,65 @@ p{
     height: 350px;
     color: white;
     background-color: rgba(27, 23, 23, 0.5);
-    font-size: 15px;
+    font-size: 16px;
+    font-family: fontItalic;
     text-align: left;
     top: 280px;
 }
-.newsHD {
-    display: none;
-}
 ul {
     position: relative;
+}
+@media only screen and (max-width: 1000px) {
+    .wrapping {
+        .NYimage .NYlogo {
+            right: 55%;
+            }
+        #section {
+            left: 50% !important;
+        }
+    }
+    h3 {
+        left: 50% !important;
+    }
+    #news {
+        li{
+            width: 33.33%;
+        }
+    }
+}
+@media only screen and (max-width: 600px) {
+    .wrapping {
+        display: flex;
+        flex-direction: column;
+            .NYimage {
+            position: absolute;
+            width: 277px;
+            height: 300px;
+            align-self: center;
+            }
+            .NYlogo {
+            left: 0%;
+            }
+        #section {
+            position: relative;
+            width: 100px;
+            top: 455px;
+            left: 43% !important;
+        }
+    }
+    h3 {
+        position: relative;
+        height: 30px;
+        top: 450px;
+        left: 43% !important;
+        }
+    #news {
+        width: 100%;
+        display: flex;
+        li{
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+        }
+    }
 }

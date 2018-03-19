@@ -13,7 +13,6 @@ $(function(){
         });
         $("h3").css({
           "top" : "17px",
-          "font-size" : "20px",
           "left" : "150px",
         });
         $(".wrapping").css({
@@ -31,10 +30,16 @@ $(function(){
 // if value = Section pull info only from that section
     }).done(function(data) {
       $.each(data.results, function(key, value){
-        // console.log(data)
+        console.log(data)
+        var arr = [value.results];
         if (value.multimedia && value.multimedia[4]){
           $("#news").append("<li class='news-story'>"+"<img src="+value.multimedia[4].url+">"+"<p class='newsHD'>"+value.abstract+"</p>"+"</li>")
-        // If adding html link do it here
+        }
+        if (arr<=11){
+          return true
+        }
+        else {
+          return false
         }
     });
     }).fail(function(err) {
