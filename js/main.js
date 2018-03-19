@@ -1,8 +1,25 @@
 $(function(){
   $("#section").change(function(event){
         var selectVal = $(this).val();
+        $(".NYlogo").css({
+          "width" : "80px",
+          "top" : "5px",
+          "height" : "80px",
+        });
+        $("#section").css({
+          "width" : "100px",
+          "top" : "40px",
+          "left" : "150px",
+        });
+        $("h3").css({
+          "top" : "17px",
+          "font-size" : "20px",
+          "left" : "150px",
+        });
+        $(".wrapping").css({
+          "height" : "100px",
+        });
         $("#news").empty();
-    //event.preventDefault();
         var url = "https://api.nytimes.com/svc/topstories/v2/"+selectVal+".json";
     url += '?' + $.param({
       'api-key': "f6e3ac6ce7af477f9fd1254b4b7dd29f"
@@ -14,8 +31,10 @@ $(function(){
 // if value = Section pull info only from that section
     }).done(function(data) {
       $.each(data.results, function(key, value){
+        // console.log(data)
         if (value.multimedia && value.multimedia[4]){
-          $("#news").append("<li class='news-story'>"+"<img src="+value.multimedia[4].url+">"+"<p class='newsHD'>"+value.title+"</p>"+"</li>")
+          $("#news").append("<li class='news-story'>"+"<img src="+value.multimedia[4].url+">"+"<p class='newsHD'>"+value.abstract+"</p>"+"</li>")
+        // If adding html link do it here
         }
     });
     }).fail(function(err) {
