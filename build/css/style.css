@@ -98,7 +98,7 @@ h3 {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
+  flex-wrap: wrap; }
   #news li {
     position: relative;
     width: 25%;
@@ -143,14 +143,15 @@ ul {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column; }
+    -ms-flex-direction: column;
+    flex-direction: column; }
     .wrapping .NYimage {
       position: absolute;
       width: 277px;
       height: 300px;
       -ms-flex-item-align: center;
-          align-self: center; }
+      -ms-grid-row-align: center;
+      align-self: center; }
     .wrapping .NYlogo {
       left: 0%; }
     .wrapping #section {

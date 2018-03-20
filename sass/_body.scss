@@ -29,8 +29,11 @@ h3 {
 }
 #news {
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     li{
         position: relative;
         width: 25%;
@@ -80,13 +83,20 @@ ul {
 }
 @media only screen and (max-width: 600px) {
     .wrapping {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
             .NYimage {
             position: absolute;
             width: 277px;
             height: 300px;
-            align-self: center;
+            -ms-flex-item-align: center;
+                -ms-grid-row-align: center;
+                align-self: center;
             }
             .NYlogo {
             left: 0%;
@@ -106,6 +116,8 @@ ul {
         }
     #news {
         width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         li{
             width: 100%;

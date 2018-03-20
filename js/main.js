@@ -30,16 +30,10 @@ $(function(){
 // if value = Section pull info only from that section
     }).done(function(data) {
       $.each(data.results, function(key, value){
-        console.log(data)
-        var arr = [value.results];
-        if (value.multimedia && value.multimedia[4]){
-          $("#news").append("<li class='news-story'>"+"<img src="+value.multimedia[4].url+">"+"<p class='newsHD'>"+value.abstract+"</p>"+"</li>")
-        }
-        if (arr<=11){
-          return true
-        }
-        else {
-          return false
+        console.log(value)
+        var arr = $("li").length;
+        if (value.multimedia && value.multimedia[4] && arr <= [11]){
+          $("#news").append("<li class='news-story'>"+"<img src="+value.multimedia[4].url+">"+"<p class='newsHD'>"+value.abstract+"</p>"+"</li>");
         }
     });
     }).fail(function(err) {
