@@ -3,15 +3,21 @@ body {
     background-color: black;
     height: 100%;
     width: 100%;
+    // so you don't have to declare it multiple times
+    font-size: 16px;
+    font-family: OpenSans;
 }
 .wrapping {
     position: relative;
     width: 100%;
     height: inherit;
     .NYimage .NYlogo {
-            position: absolute;
-            top: 200px;
-        }
+        position: absolute;
+        top: 200px;
+        // added from HTML
+        width: 300px;
+        height: 227px;
+    }
     #section {
         position: relative;
         left: 290px;
@@ -20,8 +26,6 @@ body {
 }
 h3 {
     color: white;
-    font-size: 16px;
-    font-family: fontItalic;
     position: relative;
     left: 290px;
     top: 265px;
@@ -33,7 +37,7 @@ h3 {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
     li{
         position: relative;
         width: 25%;
@@ -55,8 +59,6 @@ p{
     height: 350px;
     color: white;
     background-color: rgba(27, 23, 23, 0.5);
-    font-size: 16px;
-    font-family: fontItalic;
     text-align: left;
     top: 280px;
 }
@@ -67,7 +69,7 @@ ul {
     .wrapping {
         .NYimage .NYlogo {
             right: 55%;
-            }
+        }
         #section {
             left: 50% !important;
         }
@@ -88,19 +90,19 @@ ul {
         display: flex;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
-            .NYimage {
+        -ms-flex-direction: column;
+        flex-direction: column;
+        .NYimage {
             position: absolute;
             width: 277px;
             height: 300px;
             -ms-flex-item-align: center;
-                -ms-grid-row-align: center;
-                align-self: center;
-            }
-            .NYlogo {
+            -ms-grid-row-align: center;
+            align-self: center;
+        }
+        .NYlogo {
             left: 0%;
-            }
+        }
         #section {
             position: relative;
             width: 100px;
@@ -113,16 +115,16 @@ ul {
         height: 30px;
         top: 450px;
         left: 43% !important;
-        }
+    }
     #news {
-        width: 100%;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
+        // width: 100%;
+        // display: -webkit-box;
+        // display: -ms-flexbox;
+        // display: flex;
         li{
             width: 100%;
-            height: 350px;
-            overflow: hidden;
+            //height: 350px;
+            //overflow: hidden;
         }
     }
 }
