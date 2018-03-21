@@ -41,7 +41,8 @@ gulp.task('sass', function() {
           browsers: ['last 2 versions']
         })
       )
-      .pipe(gulp.dest('./build/css'))
+      // not necessary for the project
+      //.pipe(gulp.dest('./build/css'))
       .pipe(cssnano())
       .pipe(rename('style.min.css'))
       .pipe(gulp.dest('./build/css'));

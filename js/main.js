@@ -30,7 +30,8 @@ $(function(){
 // if value = Section pull info only from that section
     }).done(function(data) {
       $.each(data.results, function(key, value){
-        console.log(value)
+        // shouldn't use console
+        //console.log(value)
         var arr = $("li").length;
         if (value.multimedia && value.multimedia[4] && arr <= [11]){
           $("#news").append("<li class='news-story'>"+"<img src="+value.multimedia[4].url+">"+"<p class='newsHD'>"+value.abstract+"</p>"+"</li>");
@@ -48,4 +49,3 @@ $(function(){
     $(event.currentTarget).find(".newsHD").slideUp();
   });  
 });
-// When clicking each button open images and title.
