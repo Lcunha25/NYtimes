@@ -6,31 +6,23 @@ var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var eslint = require('gulp-eslint');
 var sass = require('gulp-sass');
-var autoprefixer = require("gulp-autoprefixer");
-var cssnano = require("gulp-cssnano");
-var rename = require("gulp-rename");
-var prettyError = require("gulp-prettyerror")
-const babel = require('gulp-babel');
+var autoprefixer = require('gulp-autoprefixer');
+var cssnano = require('gulp-cssnano');
+var prettyError = require('gulp-prettyerror')
+var babel = require('gulp-babel');
 // TASKS
-
-gulp.task('babel', () =>
-    gulp.src('js/*.js')
-        .pipe(babel({
-            presets: ['es2015']
-        }))
-        .pipe(gulp.dest('build'))
-);
 gulp.task('scripts', function() {
-    return gulp.src('js/*.js') // What files do we want gulp to consume?
-    .pipe(uglify()) // Call the uglify function on these files
-    .pipe(rename({ extname: '.min.js'})) // Rename the uglified file
-    .pipe(gulp.dest('./build/js')); // Where do we put the result?
+    return gulp.src('js/*.js')
+    .pipe(babel({presets: ['es2015']}))
+    .pipe(uglify())
+    .pipe(rename({ extname: '.min.js'}))
+    .pipe(gulp.dest('./build/js'));
 });
-gulp.task('eslint', function() {
-    return gulp.src('js/*.js') // What files do we want gulp to consume?
-    .pipe(uglify()) // Call the uglify function on these files
-    .pipe(rename({ extname: '.min.js'})) // Rename the uglified file
-    .pipe(gulp.dest('./build/js')); // Where do we put the result?
+gulp.task('lint', function() {
+    return gulp.src('js/*.js')
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
 });
 gulp.task('browser-sync', function() {
     browserSync.init({
@@ -60,4 +52,4 @@ gulp.task('sass', function() {
       .pipe(rename('style.min.css'))
       .pipe(gulp.dest('./build/css'));
   });
-  gulp.task('default', ['browser-sync', 'scripts' , 'sass', 'watch', 'eslint', 'babel']);
+  gulp.task('default', ['browser-sync', 'scripts' , 'sass', 'watch', 'lint']);
