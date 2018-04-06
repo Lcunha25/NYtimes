@@ -10,9 +10,23 @@ var autoprefixer = require("gulp-autoprefixer");
 var cssnano = require("gulp-cssnano");
 var rename = require("gulp-rename");
 var prettyError = require("gulp-prettyerror")
+const babel = require('gulp-babel');
 // TASKS
 
+gulp.task('babel', () =>
+    gulp.src('js/*.js')
+        .pipe(babel({
+            presets: ['es2015']
+        }))
+        .pipe(gulp.dest('build'))
+);
 gulp.task('scripts', function() {
+    return gulp.src('js/*.js') // What files do we want gulp to consume?
+    .pipe(uglify()) // Call the uglify function on these files
+    .pipe(rename({ extname: '.min.js'})) // Rename the uglified file
+    .pipe(gulp.dest('./build/js')); // Where do we put the result?
+});
+gulp.task('eslint', function() {
     return gulp.src('js/*.js') // What files do we want gulp to consume?
     .pipe(uglify()) // Call the uglify function on these files
     .pipe(rename({ extname: '.min.js'})) // Rename the uglified file
@@ -46,4 +60,4 @@ gulp.task('sass', function() {
       .pipe(rename('style.min.css'))
       .pipe(gulp.dest('./build/css'));
   });
-  gulp.task('default', ['browser-sync', 'scripts' , 'sass', 'watch']);
+  gulp.task('default', ['browser-sync', 'scripts' , 'sass', 'watch', 'eslint', 'babel']);
