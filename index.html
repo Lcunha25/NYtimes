@@ -6,52 +6,50 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>NY Times</title>
     <link rel="stylesheet" type="text/css" href="/build/css/style.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="/build/js/main.min.js"></script>
 
 </head>
 <body>
-<section class="wrapping">
-    <div class="NYimage"><img class="NYlogo" src="/assets/images/nyt-logo.svg" no-repeat, center, width="300px" height="227px"></div>
-    <h3>Chose a section:</h3>
-    <!-- using h3 instead of p not to affect style pushed from imported text -->
-    <select value="sections" id="section">
-        <option class="one">Sections..</option>
-        <option value="home">Home</option>
-        <option value="opinion">Opinion</option>
-        <option value="world">World</option>
-        <option value="national">National</option>
-        <option value="politics">Politics</option>
-        <option value="upshot">Upshot</option>
-        <option value="nyregion">Nyregion</option>
-        <option value="business">Business</option>
-        <option value="technology">Technology</option>
-        <option value="science">Science</option>
-        <option value="health">Health</option>
-        <option value="sports">Sports</option>
-        <option value="arts">Arts</option>
-        <option value="books">Books</option>
-        <option value="movies">Movies</option>
-        <option value="theater">Theater</option>
-        <option value="sundayreview">Sunday Review</option>
-        <option value="fashion">Fashion</option>
-        <option value="tmagazine">Tmagazine</option>
-        <option value="food">Food</option>
-        <option value="travel">Travel</option>
-        <option value="magazine">Magazine</option>
-        <option value="realestate">Realestate</option>
-        <option value="automobiles">Automobiles</option>
-        <option value="obituaries">Obituaries</option>
-        <option value="insider">Insider</option>      
-    </select>
-</section>
-    <ul id="news">
-    </ul>
+    <section class="wrapping">
+        <div class="NYimage"><img class="NYlogo" src="/assets/images/nyt-logo.svg" no-repeat, center, width="300px" height="227px"></div>
+        <div class="text-wrapping">
+            <h3>Chose a section:</h3>
+            <!-- using h3 instead of p not to affect style pushed from imported text -->
+            <select value="sections" id="section">
+                <option class="one">Sections..</option>
+                <option value="home">Home</option>
+                <option value="opinion">Opinion</option>
+                <option value="world">World</option>
+                <option value="national">National</option>
+                <option value="politics">Politics</option>
+                <option value="upshot">Upshot</option>
+                <option value="nyregion">Nyregion</option>
+                <option value="business">Business</option>
+                <option value="technology">Technology</option>
+                <option value="science">Science</option>
+                <option value="health">Health</option>
+                <option value="sports">Sports</option>
+                <option value="arts">Arts</option>
+                <option value="books">Books</option>
+                <option value="movies">Movies</option>
+                <option value="theater">Theater</option>
+                <option value="sundayreview">Sunday Review</option>
+                <option value="fashion">Fashion</option>
+                <option value="tmagazine">Tmagazine</option>
+                <option value="food">Food</option>
+                <option value="travel">Travel</option>
+                <option value="magazine">Magazine</option>
+                <option value="realestate">Realestate</option>
+                <option value="automobiles">Automobiles</option>
+                <option value="obituaries">Obituaries</option>
+                <option value="insider">Insider</option>      
+            </select>
+        </div>
+    </section>
+        <ul id="news">
+        </ul>
 <footer>
-    <h2>©Copyright 2016 INSTANEWS</h2>
+        <h2>©Copyright 2016 INSTANEWS</h2>
 </footer>
-<script
-src="https://code.jquery.com/jquery-3.3.1.min.js"
-integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-crossorigin="anonymous"></script>
-<script src="/build/js/main.min.js"></script>
 </body>
-</html>

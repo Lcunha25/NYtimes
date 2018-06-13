@@ -2,8 +2,6 @@ $(()=> {
   $('#section').on('change', function() {
         const selectVal = $(this).val();
         $('.NYlogo').css({
-          'width' : '80px',
-          'top' : '5px',
           'height' : '80px',
         });
         $('#section').css({
@@ -11,12 +9,13 @@ $(()=> {
           'top' : '40px',
           'left' : '150px',
         });
-        $('h3').css({
-          'top' : '17px',
-          'left' : '150px',
+        $('.text-wrapping').css({
+          'display': 'flex',
+          'flex-direction': 'column',
+          'align-items': 'center'
         });
         $('.wrapping').css({
-          'height' : '100px',
+          'margin' : '20px 40px',
         });
         $('#news').empty();
         let url = `https://api.nytimes.com/svc/topstories/v2/${selectVal}.json`;
@@ -31,7 +30,7 @@ $(()=> {
       $.each(data.results, (key, value)=> {
         let arr = $('li').length;
         if (value.multimedia && value.multimedia[4] && arr <= [11]){
-          $('#news').append(`<li class='news-story'><img src=${value.multimedia[4].url}><p class='newsHD'>${value.abstract}</p></li>`);
+          $('#news').append(`<li class='news-story'><img src=${value.multimedia[4].url}><p class='newsHD'><a href=${value.url}>${value.abstract}</a></p></li>`);
         }
     });
     }).fail((err)=> {

@@ -1,0 +1,43 @@
+// tablet
+@media only screen and (min-width: 600px) { 
+    .wrapping {
+        position: relative;
+        margin: 100px 20%;
+        height: inherit;
+        display: flex;
+        flex-direction: unset !important;
+        .NYimage{
+            width: 300px;
+            .NYlogo {
+                width: 100%;
+            }
+        }
+    }
+    #news .news-story {
+        width: 33.33% !important;
+    }
+    .text-wrapping{
+        height: 100%;
+        margin: auto 0 !important;
+        h3 {
+            color: white;
+            font-size: 16px;
+            font-family: fontItalic;
+        }
+    }
+
+}
+
+// desktop
+@media only screen and (min-width: 1000px) {
+    .wrapping{
+        margin: 150px 75px;
+    }
+    #news .news-story {
+        width: 25% !important;
+    }
+    // footer
+    footer h2{
+        margin: 10px !important;
+    }
+}
