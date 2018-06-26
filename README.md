@@ -1,11 +1,15 @@
+![](assets/images/background.png)
 # NY Times Project
-## This is our NY Times project for RED academy. It is a mobile-first website built with SCSS, CSS, HTML, Gulp and Javascript (Jquery).
+This is our NY Times project for RED academy. It is a mobile-first website built with SCSS, CSS, HTML, Gulp, Ajax(API) and Javascript (Jquery).
+
+# Ajax
+Our NY-Times uses the real NY-times open API to interact with the website's news. FOr this reason the website will always be updated with the latest news from NY Times.
 
 # Responsive
-### The website uses a mobile first approach. Anything above 600px is consider tablet and will forward the user to the tablet sizings, the same applies for the desktop version above 1000px.
+The website uses a mobile first approach. Anything above 600px is consider tablet and will forward the user to the tablet sizings, the same applies for the desktop version above 1000px.
 
 # Fonts
-### This project is done by downoloading the founts we are using from google founts and appending it to the project.
+This project is done by downoloading the founts we are using from google founts and appending it to the project.
 
 # Structure
     index.html - //this folder contains all the text
